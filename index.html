@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website 2.O</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!--Navigation Menu-->
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span>E.M</span>   
+            </div>
+            <div class="links">
+                <div class="link"><a href="#home">Home</a></div>
+                <div class="link"><a href="#about">About</a></div>
+                <div class="link"><a href="#projects">Projects</a></div>
+                <div class="link"><a href="#skills">Skills</a></div>
+                <div class="link"><a href="#education">Education</a></div>
+                <div class="link"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars" id="hamburger-icon" onclick="toggleMenu()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Skills</a>
+                <a href="#">Education</a>
+                <a href="#">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!--Home Section Start-->
+    <section>
+        <div class="main-container">
+            <div class="image">
+                <img src="home-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left">
+                    Hey! I'm
+                    <span>Emiliano</span>
+                </h1>
+                <div class="typewriter">
+                    I'm a
+                    <span class="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <style>
+                    .cursor {
+                        display: inline-block;
+                        animation: blink 1s step-end infinite;
+                    }
+
+                    @keyframes blink {
+                        from, to {
+                            opacity: 1;
+                        }
+                        50% {
+                            opacity: 0;
+                        }
+                    }
+                </style>
+                <script>
+                    const typewriterText = document.querySelector('.typewriter-text');
+                    const texts = ['Code Enthusiast', 'Problem Solver', 'Gamer', 'AI Lover', 'Future Full Stack'];
+                    let index = 0;
+                    let currentText = '';
+                    let isDeleting = false;
+                    let speed = 150; // Speed of typing/erasing
+                
+                    function type() {
+                        if (isDeleting) {
+                            currentText = texts[index].substring(0, currentText.length - 1);
+                        } else {
+                            currentText = texts[index].substring(0, currentText.length + 1);
+                        }
+                
+                        typewriterText.textContent = currentText;
+                
+                        // If the text is fully typed out
+                        if (!isDeleting && currentText === texts[index]) {
+                            setTimeout(() => {
+                                isDeleting = true; // Start deleting
+                            }, 1000); // Wait 1 second before starting to erase
+                        }
+                
+                        // If the text is fully erased
+                        if (isDeleting && currentText === '') {
+                            isDeleting = false; // Start typing again
+                            index = (index + 1) % texts.length; // Move to the next text
+                        }
+                
+                        setTimeout(type, speed);
+                    }
+                
+                    type(); // Initial call to start typing
+                </script>
+                
+                <p>I enjoy creating new projects, exploring technology, and constantly learning. When I’m not coding, you’ll find me playing video games or listening to music. I love combining creativity and logic to solve problems and build fun, interactive experiences.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Emickson27" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/emickson27/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yktv_emiliano/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto: jemunoz11@miners.utep.edu" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-envelope"></i> 
+                    </a>
+                </div>
+                <div class="btn">
+                    <a href="https://www.linkedin.com/in/emickson27/" target="_blank" rel="noopener noreferrer">
+                        <button>Connect</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--About Section Start-->
+
+    <section class="about" id="about">
+        <div class="content">
+            <div class="title"><span>About Me</span></div>
+            <div class="about-details">
+                <div class="left">
+                    <img src="home-image.jpg" alt="">
+                </div>
+                <div class="right">
+                    <div class="topic">Developing is My Passion</div>
+                    <p>
+                     I’m a Computer Science student at the University of Texas at El Paso. I love coding and solving challenges through technology. Right now, I’m building a portfolio website to showcase my projects and skills in Java, Python, CSS, and HTML.
+
+        I’m passionate about software development and excited to dive into full-stack development, learning both front-end and back-end technologies. AI also fascinates me, and I hope to integrate it into future projects.
+
+    When I’m not coding, you’ll find me gaming, listening to music, or brainstorming new ideas. I’m known for my positive attitude and teamwork, and I’m always ready to learn something new. I’m currently on the lookout for internships where I can grow, contribute, and make a difference in the tech world.
+                    </p>
+                    <div class="button">
+                        <a href="Jesus_Munoz_CV.pdf" download="Emiliano_Munoz_CV.pdf">
+                            <button>Download CV</button>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--My Projects Section Start-->
+
+    <section class="projects"id="projects">
+        <div class="content">
+            <div class="title"><span>My Projects</span></div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="topic">Project #1</div>
+                    <p>Info bout project...</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="topic">Project #2</div>
+                    <p>Info bout project...</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="topic">Project #3</div>
+                    <p>Info bout project...</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="topic">Project #4</div>
+                    <p>Info bout project...</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div class="topic">Project #5</div>
+                    <p>Info bout project...</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <div class="topic">Project #6</div>
+                    <p>Info bout project...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--My Experiences Section Start-->
+    <section class="skills"id="skills">
+        <div class="content">
+            <div class="title"><span>My Skills</span></div>
+            <div class="skills-details">
+                <div class="text">
+                    <div class="topic">
+                        Skills Reflects My Knowledge
+                    </div>
+                    <p data-aos="fade-right">I enjoy building creative solutions by combining technical knowledge and problem-solving skills. With experience in Java, HTML, and CSS, I’m focused on expanding my expertise, especially in JavaScript and Python. I’m always excited to take on new challenges, learn from others, and grow as a developer. You can explore my full background by checking out my LinkedIn profile or downloading my resume directly from this site.
+
+                    </p>
+                    <div class="skills-experience">
+                        <div class="num">1</div>
+                        <div class="exp">
+                            Year Of <br>
+                            Experience
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes">
+                    <div class="box">
+                        <div class="topic">Java</div>
+                        <div class="per">Proficient</div>    
+                    </div>
+                    <div class="box">
+                        <div class="topic">HTML</div>
+                        <div class="per">Intermediate</div>    
+                    </div>
+                    <div class="box">
+                        <div class="topic">CSS</div>
+                        <div class="per">Intermediate</div>    
+                    </div>
+                    <div class="box">
+                        <div class="topic">JavScript</div>
+                        <div class="per">Beginner</div>    
+                    </div>
+                    <div class="box">
+                        <div class="topic">Python</div>
+                        <div class="per">Learning</div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Education Section Start-->
+    <section class="education"id="education">
+        <div class="content">
+            <div class="title">
+                <span>My Education</span>
+            </div>
+            <div class="education-details">
+                <div class="left">
+                    <div class="topic">Education</div>
+                    <div class="box">
+                        <p>
+                            I am currently pursuing a Bachelor's degree in Computer Science at the University of Texas at El Paso, with an anticipated graduation date in May 2027. My coursework has provided me with a strong foundation in programming languages such as Java, Python, HTML, and CSS. As a dedicated student, I have been recognized for my academic achievements, including being placed on the Dean's List for both the Fall 2023 and Spring 2024 semesters. I am continuously learning and exploring new technologies to enhance my skills in web development, artificial intelligence, and full-stack development.
+                        </p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="topic">Experience</div>
+                    <div class="box">
+                        <p>
+                            My experience includes a role as a mechanic electronic helper at Alfa Performance Connection in Anaheim, CA, where I performed vehicle maintenance and contributed to developing a business webpage. Currently, I am volunteering with the UTEP Tech Team, assisting with updates to the Computer Science department’s website and providing technical support to students. I am also an active member of several clubs, including the Student Support Services Program (SSSP), CAHSI (Computing Alliance of Hispanic Serving Institutions), and the Coding Interview Club (CIC).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact Me section Start-->
+    <section class="contact"id="contact">
+        <div class="content">
+            <div class="title">
+                <span>Contact Me</span>
+            </div>
+            <div class="text">
+                <div class="topic">Have Any Opportunity?</div>
+                <p></p>
+                <div class="button">
+                    <a href="https://www.linkedin.com/in/emickson27/" target="_blank" rel="noopener noreferrer">
+                        <button>Let's Chat</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!--Footer Section Start-->
+    <footer>
+        <div class="text">
+            <span>Created By
+                <a href="#">Emickson27</a>
+                &#169;2024 All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const isVisible = dropdownMenu.style.display === 'flex';
+            dropdownMenu.style.display = isVisible ? 'none' : 'flex';
+        }
+    </script>
+  
+</body>
+</html>
