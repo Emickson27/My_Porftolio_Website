@@ -161,8 +161,8 @@ section .main-container{
 
 
 .main-container .image{
-    width: 400px;
-    height: 31vw;
+    width: 380px;
+    height: 25.8vw;
     border-radius: 100%;
     overflow: hidden;
     box-shadow: 0 0 30px #EBE3D8;
