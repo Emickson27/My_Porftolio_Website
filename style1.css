@@ -161,18 +161,18 @@ section .main-container{
 
 
 .main-container .image{
-    width: 380px;
-    height: 25.8vw;
-    border-radius: 100%;
+    width: 25vw;  /* Example: 25% of the viewport width */
+    height: 25vw; /* Matching the width for a perfect circle */
+    border-radius: 50%; /* Ensure it's always a circle */
     overflow: hidden;
     box-shadow: 0 0 30px #EBE3D8;
-    margin-left: 0vw;
 }
 
 
 .main-container .image img{
     width: 100%;
-    min-height: 20vh;
+    height: 100%;
+    object-fit: cover;
 }
 
 
